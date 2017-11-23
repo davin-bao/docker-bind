@@ -3,6 +3,7 @@ FROM alpine:latest
 RUN set -x \
     && apk add --update bind
 
+
 VOLUME ["/etc/bind"]
 EXPOSE 53 53/udp
 
