@@ -6,7 +6,7 @@ RUN set -x \
 ENV INTERVAL 1m
 
 RUN set -x \
-    && mkdir /etc/monitor \
+    && mkdir /etc/monitor
 
 VOLUME ["/etc/bind", "/etc/monitor"]
 EXPOSE 53 53/udp
