@@ -1,6 +1,12 @@
 # docker-bind
 bind for docker
 
+### bind reload configration signal
+
+```
+touch /etc/bind/signal.lock
+```
+
 ### use docker command
 docker run -it --name bind -v /xmisp/docker/bind/conf:/etc/bind:rw -v /root/.ssh:/root/.ssh -p 2222:22 -v /etc/ssh:/etc/ssh -p 53:53/udp -e INTERVAL=10s davinbao/bind
 
