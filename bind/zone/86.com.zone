@@ -1,0 +1,14 @@
+$TTL 86400
+$ORIGIN 86.com.
+@       IN  SOA ns1 root(
+            2013031901      ;serial
+            12h     ;refresh
+            7200        ;retry
+            604800      ;expire
+            86400       ;mininum
+            )
+            NS  ns1.86.com.
+            NS  ns2.86.net.
+ns1     IN  A   192.168.188.209
+ns2	IN  A   192.168.188.209
+www     IN  A   192.168.188.210

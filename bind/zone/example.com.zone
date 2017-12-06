@@ -1,0 +1,35 @@
+$ORIGIN example.com.
+$TTL 3600
+@            IN SOA  (
+                        example.com.
+                        post.example.com.
+                        2014110501
+                        3600
+                        14400
+                    	   604800
+                        3600
+                     )
+            NS  ns1.86.com.
+            NS  ns2.86.com.
+
+; NS RECORDS
+@ 3600      IN NS       ns1.nameserver.com.
+@ 3600      IN NS       ns2.nameserver.com.
+; MX RECORDS
+@ 3600      IN MX       10 mail-gw1.example.net.
+; A RECORDS
+srv1 3600      IN A        192.168.188.209
+@ 3600    IN A	192.168.188.210
+; CNAME RECORDS
+aa 3600      IN CNAME    ns1.nameserver.com.
+; TXT RECORDS
+@ 3600      IN TXT      ns1.nameserver.com.
+; AAAA RECORDS
+@ 3600      IN AAAA     2001:7fd::1
+@ 3600	    IN AAAA	2001:503:c27::2:30
+@ 3600      IN AAAA     ::1
+; SRV RECORDS
+_sip._tcp IN SRV 0 5 5060 ns1.nameserver.com.
+sip IN SRV 0 5 5060 10.10.10.10
+sip.tcp IN SRV 0 5 5060 srv2
+

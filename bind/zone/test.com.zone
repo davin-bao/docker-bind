@@ -1,0 +1,34 @@
+$ORIGIN test.com.
+$TTL 3600
+@          IN SOA        (
+                         example.com.
+                         post.example.com.
+                         1511482429
+                         3600
+                         14000
+                         604800
+                         3600
+);zoneId:test.com
+; A RECORDS
+@        3600     IN A          10.10.10.10 ;rrId:123456789011
+@        3600     IN A          10.10.10.11 ;rrId:12345678901
+@        3600     IN A          2001:7fd::1;rrId:12345678908
+ns1        3600     IN A          10.10.10.100;rrId:12345678908
+; AAAA RECORDS
+@        3600     IN AAAA       ::1;rrId:12345678902
+@        3600     IN AAAA       ::2;rrId:12345678906
+; CNAME RECORDS
+www      3600     IN CNAME      test.com.;rrId:12345678903
+sss      3600     IN CNAME      CNAME.com.;rrId:12345678904
+; MX RECORDS
+@        3600     IN MX    5    test2.com.;rrId:12345678904
+@        3600     IN MX    50   MX.com.;rrId:12345678905
+; NS RECORDS
+@        3600     IN NS         example.com.;rrId:12345678909
+@        3600     IN NS         ns1.test.com.;rrId:12345678905
+; SRV RECORDS
+@        3600     IN SRV        0 0 0 nss.test.com.;rrId:12345678906
+@        3600     IN SRV        0 1 5 10.10.10.SRV.;rrId:12345678902
+; TXT RECORDS
+@        3600     IN TXT        10.10.10.11;rrId:12345678908
+@        3600     IN TXT        test.com;rrId:12345678901

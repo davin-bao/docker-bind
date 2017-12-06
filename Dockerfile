@@ -1,23 +1,23 @@
 FROM alpine:latest
 
+MAINTAINER Davin Bao <davin.bao@gmail.com>
+
 RUN set -x \
-    && apk add --update bind
+    && apk add --update bash openssh rsync bind
 
 ENV INTERVAL 1m
 
 RUN set -x \
-    && mkdir /etc/monitor
+    && mkdir /var/log/bind
 
-VOLUME ["/etc/bind", "/etc/monitor"]
-EXPOSE 53 53/udp
+VOLUME ["/etc/bind", "/var/log/bind", "/root/.ssh"]
+EXPOSE 22 53 53/udp
 
 COPY monitor.sh /
 COPY entrypoint.sh /
 
 RUN set -x \
-    && chown -R named:named /etc/bind \
-    && chmod -R 777 /etc/bind \
     && chmod +x /monitor.sh \
     && chmod +x /entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+CMD "/entrypoint.sh"
