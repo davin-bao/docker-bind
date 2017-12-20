@@ -1,6 +1,9 @@
 # docker-bind
 bind for docker
 
+### add ssh key
+copy configration server's id_rsa.pub to bind server /root/.ssh/authorized_keys 
+
 ### bind reload configration signal
 
 ```
